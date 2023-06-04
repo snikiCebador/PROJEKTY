@@ -1,0 +1,123 @@
+
+body
+{
+background-color: darkgrey;
+background-image: url("bg.jpg");
+background-repeat: repeat;
+}
+.container
+{
+width:1010px;
+height:600px;
+margin-left:auto;
+margin-right:auto;
+}
+#top_header
+{
+width:1000px;
+height:100px;
+margin:5px;
+border-radius: 10px;
+background-color: #538cc6;
+}
+
+#header_text
+{
+width:672px;
+height:90px;
+border-radius: 10px;
+background-color: #538cc6;
+}
+
+#bottom_content
+{
+width:672px;
+height:490px;
+margin:5px;
+border-radius: 10px;
+background-color: #264d73;
+float:left;
+}
+
+#bottom_content_coll
+{
+width:318px;
+height:490px;
+margin:5px;
+border-radius: 10px;
+background-color: #264d73;
+float:right;
+display:block;
+
+}
+
+#bottom_content_coll_add
+{
+width:308px;
+height:480px;
+margin:5px;
+padding:5px;
+border-radius: 10px;
+background-color: #408f4f;
+float:right;
+display:none;
+
+}
+
+
+
+#footer
+{
+width:1000px;
+margin:5px;
+height:15px;
+border-radius: 10px;
+font-size:11px;
+text-align:center;
+clear:both;
+background-color:#264d73;
+border-radius: 10px;
+}
+
+
+
+
+.skills_btn {
+  border: none;
+  background-color: #538cc6;
+  width:100px;
+  height:42px;
+  line-height: 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin:6px;
+  text-bottom:auto;
+  text-top:auto;
+  float:left;
+}
+
+.skills_btn:hover {
+  background-color: #32CD32;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.work_label
+{
+float:left;
+margin-left:10px;
+margin-right:10px;
+line-height:20px;
+
+}
+
+.contact_info_line
+{
+line-height:8px;
+}

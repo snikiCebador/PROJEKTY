@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pizza Calculator</title>
+	<meta name="description" content="Strona będąca kalkulatorem przepisu na pizzę" />
+	<meta name="keywords" content="pizza, calculator" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+	<link rel="stylesheet" href="pizza_style.css">
+	<script src="pizza_main.js"></script>
+</head>
+
+
+
+<body>
+
+
+<div class = "box">
+
+	<div class="info_detail" id = "recipe_desc" style = "visibility:hidden;">
+		<p style="font-size:25px;">PRZEPIS - opisowy</p>
+		Składniki zaczynu wymieszać w pojemniku i szczelnie zamknąć, odstawić na 1-2h w temp. pokojowej. Odstawić do lodówki na 16-24h.
+		Zaczyn połączyć z resztą składników na ciasto, wyrabiać ok. 10 min. Odstawić na 15 min. Wyrobić kulkę wstawić do szczelnego pojemnika i wstawić do lodówki na 24-96h.
+		Ciasto podzielić na porcję i uformować kulki, trzymać w lodówce , wyjąć ok. 4 h przed pieczeniem
+	</div>
+	
+	<div class="calculator">
+	
+
+		<p style="text-align:center;font-size:25px;"> WPROWADŹ DANE</p>
+		<form>
+			<label class = "label"> Liczba porcji [szt] </label>
+			<br>
+			<input id = "pizza_qty" type="number" placeholder="Liczba porcji np. 2" onfocus = "pizza_p_info_on()" onfocusout = "pizza_p_info_off()" min = "1">
+			<br>
+			<label class = "label"> Waga porcji [g] </label>
+			<br>
+			<input id = "pizza_g" type="number" placeholder="Waga porcji np. 265g" onfocus = "pizza_g_info_on()" onfocusout = "pizza_g_info_off()" min = "1">
+			<br>
+			<label class = "label"> Poziom hydracji [%] </label>
+			<br>
+			<input id = "hydration" type="number" placeholder="%Hydracja np. 65%" onfocus = "pizza_h_info_on()" onfocusout = "pizza_h_info_off()" min = "1" max = "100,000000">
+			<br>
+			<button type="button" class="btn btn-secondary" style = "width:auto;margin:4px;margin-left:130px;" onclick = "calc()" > Oblicz przepis </button>
+		</form>
+
+		
+	</div>
+	
+	<div class="info_detail" id = "info_detail_param_helper" style = "visibility:hidden;">
+	
+		POMOC W WYBORZE PARAMETRÓW
+		
+	</div>
+
+	<div class="info_detail" id = "pizza_of_day" onclick="pizza_of_day()" style = "visibility:hidden;">
+	
+		 
+		
+	</div>
+	
+	<div class="recipe">
+	
+		
+			<p style="text-align:center;font-size:25px;"> PRZEPIS </p>
+			
+			<div class="ind_space"> <span class = "result" style="font-size:15px;background-color:black;"> CIASTO[g] </span> <span class = "result_poolish" style="font-size:15px;background-color:black;"> ZACZYN[g] </span> </div>
+			
+			<div style = "clear:both;"> </div>
+			
+			<div class="ind_space">
+			<span class = "indeger"> MĄKA </span> <span class = "result" id = "flour_base"> --- </span> <span class = "result_poolish" id = "flour_poolish"> --- </span>
+			</div>
+			<div class="ind_space">
+			<span class = "indeger"> WODA </span> <span class = "result" id = "water_base"> --- </span>  </span> <span class = "result_poolish" id = "water_poolish"> --- </span>
+			</div>
+			<div class="ind_space">
+			<span class = "indeger"> OLIWA </span> <span class = "result" id = "oil_base"> --- </span> </span> <span class = "result_poolish" id = "oil_poolish"> --- </span>
+			</div>
+			<div class="ind_space">
+			<span class = "indeger"> SÓL </span> <span class = "result" id = "salt_base"> --- </span> </span> <span class = "result_poolish" id = "salt_poolish"> --- </span>
+			</div>
+			<div class="ind_space">
+			<span class = "indeger"> DROŻDŻE(suche) </span> <span class = "result" id = "yeast_base"> --- </span> </span> <span class = "result_poolish" id = "yeast_poolish"> --- </span>
+			</div>
+			<div class="ind_space">
+			<span class = "indeger"> CUKIER </span> <span class = "result" id = "sugar_base"> --- </span> </span> <span class = "result_poolish" id = "sugar_poolish"> --- </span>
+			</div>
+		
+		
+	</div>
+	
+
+</div>
+
+</body>
+
+</html>

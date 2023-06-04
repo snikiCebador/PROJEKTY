@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8" />
+	<title>AIM GAME</title>
+	<meta name="description" content="Gra do treningu aimowania" />
+	<meta name="keywords" content="aim, game" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+<script>
+
+let results_tab = [];
+let shoots_qty = document.getElementById("shoots").value;
+
+function define_properties() {
+let target_size = document.getElementById("target_size").value;
+document.getElementById("target").style.height = String(target_size) + 'px';
+document.getElementById("target").style.width = String(target_size) + 'px';
+document.getElementById("target").style.right = ((500 - (target_size / 2)) * -1) + "px";
+document.getElementById("target").style.bottom = ((1000 (target_size / 2)) * -1) + "px";
+
+return target_size
+}
+
+
+document.getElementsByClassName("properties")[0].innerHTML = "";
+
+
+
+function dot_clicked() {
+let target_size = document.getElementById("target_size").value;
+let shoots_qty = document.getElementById("shoots").value;
+let aim_width = (Math.floor(Math.random()*(1000-target_size))) * -1;
+let aim_height = (Math.floor(Math.random()*(500-target_size))) * -1;
+let currentDate = Date.now();
+
+
+
+document.getElementById("target").style.right = aim_width + "px";
+document.getElementById("target").style.bottom = aim_height + "px";
+
+results_tab.push(currentDate)
+
+liczba = ((results_tab.length) - 1)
+
+if (liczba < 1) {
+
+document.getElementsByClassName("properties")[0].innerHTML = "";
+
+
+} else if (liczba <= shoots_qty) {
+	document.getElementsByClassName("properties")[0].innerHTML = "Liczba trafień: " + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
+															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
+															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
+															
+	if (liczba == shoots_qty) {
+		document.getElementById("game_area").style.backgroundColor = "grey";
+		document.getElementById("target").style.backgroundColor = "grey";
+		document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+	}
+} else {
+
+document.getElementById("game_area").style.backgroundColor = "grey";
+document.getElementById("target").style.backgroundColor = "grey";
+document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+	
+}
+}
+
+
+</script>
+
+</head>
+
+<style>
+
+body {
+background-color:#e6f2ff;
+}
+
+.header {
+background-color:#e6f2ff;
+width:1020px;
+height:100px;
+margin:auto;
+margin-bottom:10px;
+border-radius:4px;
+
+}
+
+.title {
+background-color:#1a8cff;
+width:200px;
+height:100px;
+border-radius:4px;
+font-size: 40px;
+line-height:100px;
+text-align:center;
+font-family: Fantasy, Papyrus;
+float:left;
+}
+
+.properties {
+background-color:#1a87f5;
+width:410px;
+height:100px;
+border-radius:4px;
+font-size: 16px;
+line-height:20px;
+text-align:center;
+font-family: Fantasy, Papyrus;
+float:left;
+}
+
+#results {
+background-color:#1a87f5;
+width:400px;
+height:90px;
+border-radius:4px;
+line-height: 30px;
+padding: 5px;
+font-family: Fantasy, Papyrus;
+float:left;
+}
+
+#game_area {
+background-color:#b3d9ff;
+width:1000px;
+height:500px;
+margin: auto;
+padding:10px;
+border-radius:4px;
+text-align: center;
+font-size: 32px;
+line-height: 40px;
+font-family: Fantasy, Papyrus;
+}
+
+#target {
+
+width:20px;
+height:20px;
+background-color:#ff6600;
+border-radius:50%;
+
+position: relative;
+bottom: -240px;
+right: -490px;
+}
+.footer{
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:white;
+	color:grey;
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+<body>
+
+<div class = "container">
+
+	<div class = "header">
+	
+		<div class = "properties"> <i> Aby rozpocząć grę kliknij kropkę na środku ekranu </i> </div>
+	
+		<div class = "title" onclick="clear_restart()"> "AIMER" </div>
+	
+		<div id = "results"> 
+		
+		<label for="target_size">Wielkość celu:</label>
+		<select name = "target_size" id = "target_size">
+			<option value="20"> Mała </option>
+			<option value="30"> Średnia </option>
+			<option value="40"> Duża </option>
+		</select>
+		<br>
+		<label for="shoots">Liczba prób:</label>
+
+		<input type="number" id="shoots" name="shoots" min="0" max="100">
+		
+		<button onclick = "define_properties()"> Ustaw </button>
+	
+
+		</div>
+		
+	</div>
+
+	<div id = "game_area">
+		
+		<div id = "target" onclick = "dot_clicked()"> </div>
+
+	</div>
+
+</div>
+
+<div style = "clear:both;"> </div>
+
+<div class = "footer"> 
+
+	AIMER v 1.0 - Projekt JavaScript &copy RAFAŁ CECOTKA 
+
+</div>
+
+</body>
+
+</html>
