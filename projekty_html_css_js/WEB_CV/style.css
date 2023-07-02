@@ -1,9 +1,10 @@
 
 body
 {
-background-color: darkgrey;
+background-color: #538cc6;
 background-image: url("bg.jpg");
 background-repeat: repeat;
+opacity: 0.95;
 }
 .container
 {
@@ -18,7 +19,8 @@ width:1000px;
 height:100px;
 margin:5px;
 border-radius: 10px;
-background-color: #538cc6;
+background-color: #61a4e7;
+text-align: justify;
 }
 
 #header_text
@@ -26,7 +28,44 @@ background-color: #538cc6;
 width:672px;
 height:90px;
 border-radius: 10px;
-background-color: #538cc6;
+background-color: #61a4e7;
+text-align: justify;
+}
+
+
+.past_jobs
+{
+float:right;
+margin-left:10px;
+margin-right:10px;
+font-size:12px;
+line-height:20px;
+background-color: #5b99d6;
+border-radius:10px;
+box-shadow: 0px 1px 2px rgba(36, 34, 34, 0.4);
+}
+
+.current_job
+{
+float:right;
+margin-left:10px;
+margin-right:10px;
+font-size:12px;
+line-height:20px;
+background-color: #77b5f3;
+border-radius:10px;
+box-shadow: 0px 1px 2px rgba(36, 34, 34, 0.7);
+}
+
+.schools
+{
+  margin-right:5px;
+  float:right;
+  font-size:12px;
+  line-height:20px;
+  background-color:#5b99d6;
+  border-radius:10px;
+  box-shadow: 0px 1px 1px rgba(36, 34, 34, 0.3);
 }
 
 #bottom_content
@@ -35,7 +74,7 @@ width:672px;
 height:490px;
 margin:5px;
 border-radius: 10px;
-background-color: #264d73;
+background-color: #61a4e7;
 float:left;
 }
 
@@ -45,7 +84,7 @@ width:318px;
 height:490px;
 margin:5px;
 border-radius: 10px;
-background-color: #264d73;
+background-color: #61a4e7;
 float:right;
 display:block;
 
@@ -58,7 +97,8 @@ height:480px;
 margin:5px;
 padding:5px;
 border-radius: 10px;
-background-color: #408f4f;
+/*background-color: #408f4f;*/
+background-color: #2EE59D;
 float:right;
 display:none;
 
@@ -75,7 +115,7 @@ border-radius: 10px;
 font-size:11px;
 text-align:center;
 clear:both;
-background-color:#264d73;
+background-color: #61a4e7;
 border-radius: 10px;
 }
 
@@ -99,13 +139,18 @@ border-radius: 10px;
   text-bottom:auto;
   text-top:auto;
   float:left;
+  box-shadow: 0px 2px 3px rgba(36, 34, 34, 0.4);
+  transition: all 0.2s ease 0s;
 }
 
 .skills_btn:hover {
-  background-color: #32CD32;
-  border: solid;
-  border-color: black;
-  border-width: 1px;
+
+  background-color: #2EE59D;
+  /*box-shadow: 0px 5px 7px rgba(46, 229, 157, 0.4);*/
+  box-shadow: 0px 3px 4px rgba(31, 28, 28, 0.8);
+  color: #ffffff;
+  transform: scale(1.05,1.05);
+
 }
 
 .work_label

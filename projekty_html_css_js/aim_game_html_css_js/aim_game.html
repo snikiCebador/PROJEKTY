@@ -14,13 +14,26 @@ let results_tab = [];
 let shoots_qty = document.getElementById("shoots").value;
 
 function define_properties() {
+//let results_tab = [];
+
+let shoots_qty = document.getElementById("shoots").value;
 let target_size = document.getElementById("target_size").value;
+if (shoots_qty.length == 0 || shoots_qty < 1) {
+	document.getElementById("bad_parameters").innerHTML = "Liczba prób musi być większa od 0!";
+}
+else {
+	document.getElementById("bad_parameters").innerHTML = "";
 document.getElementById("target").style.height = String(target_size) + 'px';
 document.getElementById("target").style.width = String(target_size) + 'px';
 document.getElementById("target").style.right = ((500 - (target_size / 2)) * -1) + "px";
-document.getElementById("target").style.bottom = ((1000 (target_size / 2)) * -1) + "px";
-
-return target_size
+document.getElementById("target").style.bottom = ((250 - (target_size / 2)) * -1) + "px";
+//document.getElementById("option_area").style.backgroundColor = "grey";
+document.getElementById("option_area").style.zIndex = "-10";
+//document.getElementById("option_area").style.visibility= "hidden";
+//window.alert(results_tab.length)
+document.getElementsByClassName("properties")[0].innerHTML = "Aby rozpocząć grę kliknji kropkę na środku ekranu";
+}
+return target_size, results_tab=[], shoots_qty
 }
 
 
@@ -35,7 +48,8 @@ let aim_width = (Math.floor(Math.random()*(1000-target_size))) * -1;
 let aim_height = (Math.floor(Math.random()*(500-target_size))) * -1;
 let currentDate = Date.now();
 
-
+//window.alert(shoots_qty)
+//window.alert(results_tab.length)
 
 document.getElementById("target").style.right = aim_width + "px";
 document.getElementById("target").style.bottom = aim_height + "px";
@@ -55,19 +69,27 @@ document.getElementsByClassName("properties")[0].innerHTML = "";
 															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
 															
 	if (liczba == shoots_qty) {
-		document.getElementById("game_area").style.backgroundColor = "grey";
-		document.getElementById("target").style.backgroundColor = "grey";
-		document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+		//document.getElementById("game_area").style.backgroundColor = "grey";
+		//document.getElementById("target").style.backgroundColor = "grey";
+		//document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+		document.getElementById("option_area").style.zIndex = "310";
+		document.getElementsByClassName("properties")[0].innerHTML = "";
+		document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> Liczba trafień: ' + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
+															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
+															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
 	}
 } else {
 
-document.getElementById("game_area").style.backgroundColor = "grey";
-document.getElementById("target").style.backgroundColor = "grey";
-document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
-	
+//document.getElementById("game_area").style.backgroundColor = "grey";
+//document.getElementById("target").style.backgroundColor = "grey";
+//document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+document.getElementById("option_area").style.zIndex = "310";
+document.getElementsByClassName("properties")[0].innerHTML = "";
+document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> Liczba trafień: ' + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
+															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
+															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
 }
 }
-
 
 </script>
 
@@ -91,7 +113,7 @@ border-radius:4px;
 
 .title {
 background-color:#1a8cff;
-width:200px;
+width:610px;
 height:100px;
 border-radius:4px;
 font-size: 40px;
@@ -102,7 +124,7 @@ float:left;
 }
 
 .properties {
-background-color:#1a87f5;
+background-color:#1a8cff;
 width:410px;
 height:100px;
 border-radius:4px;
@@ -116,12 +138,16 @@ float:left;
 #results {
 background-color:#1a87f5;
 width:400px;
-height:90px;
+height:auto;
 border-radius:4px;
 line-height: 30px;
 padding: 5px;
 font-family: Fantasy, Papyrus;
-float:left;
+justify-content: center;
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+box-shadow: 0px 8px 8px rgba(36, 34, 34, 0.8);
 }
 
 #game_area {
@@ -135,6 +161,23 @@ text-align: center;
 font-size: 32px;
 line-height: 40px;
 font-family: Fantasy, Papyrus;
+}
+
+#option_area {
+background-color:#b3d9ff;
+width:1000px;
+height:500px;
+margin: auto;
+padding:0px;
+border-radius:4px;
+text-align: center;
+justify-content: center;
+font-size: 32px;
+line-height: 40px;
+font-family: Fantasy, Papyrus;
+visibility: visible;
+position: absolute;
+z-index: 20;
 }
 
 #target {
@@ -172,32 +215,40 @@ right: -490px;
 
 	<div class = "header">
 	
-		<div class = "properties"> <i> Aby rozpocząć grę kliknij kropkę na środku ekranu </i> </div>
+		<div class = "properties"></div>
 	
-		<div class = "title" onclick="clear_restart()"> "AIMER" </div>
-	
-		<div id = "results"> 
-		
-		<label for="target_size">Wielkość celu:</label>
-		<select name = "target_size" id = "target_size">
-			<option value="20"> Mała </option>
-			<option value="30"> Średnia </option>
-			<option value="40"> Duża </option>
-		</select>
-		<br>
-		<label for="shoots">Liczba prób:</label>
-
-		<input type="number" id="shoots" name="shoots" min="0" max="100">
-		
-		<button onclick = "define_properties()"> Ustaw </button>
+		<div class = "title"> "AIMER" </div>
 	
 
-		</div>
 		
 	</div>
 
 	<div id = "game_area">
+		<div id = "option_area">
+			<div id = "results"> 
+				<div style = "justify-content: center;margin-bottom: 6px;letter-spacing: 2px;"> OPCJE ROZGRYWKI</div>
+				<div style = "justify-content: center;margin-bottom: 3px;">
+					<label for="target_size">Wielkość celu:</label>
+					<select name = "target_size" id = "target_size" style="font-size: 30px;">
+						<option value="20"> Mała </option>
+						<option value="30"> Średnia </option>
+						<option value="40"> Duża </option>
+					</select>
+				</div>
+				
+				<div>
+					<label for="shoots">Liczba prób:</label>
 		
+					<input type="number" id="shoots" name="shoots" min="0" max="100" style="font-size: 30px;">
+					<br>
+					<button onclick = "define_properties()" style = "padding:5px;font-size: 30px;font-family: Fantasy, Papyrus;width: 150px;letter-spacing: 2px;"> Ustaw </button>
+				</div>
+
+				<div id = "bad_parameters" style="color:red;font-size: 10px;"></div>
+				<div id = "results_last"> </div>
+		
+				</div>
+		</div>
 		<div id = "target" onclick = "dot_clicked()"> </div>
 
 	</div>
@@ -208,7 +259,7 @@ right: -490px;
 
 <div class = "footer"> 
 
-	AIMER v 1.0 - Projekt JavaScript &copy RAFAŁ CECOTKA 
+	AIMER v 2.0 - Projekt JavaScript &copy RAFAŁ CECOTKA 
 
 </div>
 
