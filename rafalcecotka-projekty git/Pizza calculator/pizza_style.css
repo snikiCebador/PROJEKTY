@@ -1,5 +1,5 @@
 body {
-	background-image: url("bg_img.png");;
+	background-image: url("pizza_bg.jpg");;
 }
 
 
@@ -101,4 +101,8 @@ body {
 
 .ind_space {
 	margin:5px;
+}
+
+.changer {
+	border-radius: 50%;
 }

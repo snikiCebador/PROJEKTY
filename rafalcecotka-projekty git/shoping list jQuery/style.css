@@ -1,0 +1,212 @@
+body {
+background-color: rgb(203, 209, 235);
+justify-content: center;
+}
+
+.item_container {
+    width: 500px;
+    height: auto;
+    background-color: rgb(203, 209, 235);
+    margin: auto;
+}
+
+.header {
+    width: 500px;
+    height: 50px;
+    background-color: rgb(203, 209, 235);
+    margin: auto;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: -2px 0 rgb(37, 36, 36), 0 2px rgb(37, 36, 36), 2px 0 rgb(37, 36, 36), 0 -2px rgb(37, 36, 36);
+}
+
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #5b747a;
+}
+
+.done {
+    background-image: linear-gradient(#c2dbdd, #5b747a);
+    padding: 7px;
+    padding-left: 10px;
+    color: rgb(61, 77, 77);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+    border-radius: 2px;
+}
+
+.todo:hover {
+    padding: 9px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-left: 40px;
+    background-image: linear-gradient(#50db7e, #0eb432);
+    cursor: pointer;
+}
+
+.done:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.todo {
+    background-image: linear-gradient(#50db7e, #179232);
+    padding: 7px;
+    padding-left: 10px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    border-radius: 2px;
+    
+}
+
+.handling_container {
+    background-color: rgb(203, 209, 235);
+    width: 500px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 5px;
+    text-align: center;
+    
+}
+
+.center {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.center_error {
+margin-top: 2px;
+    }
+
+.error_txt {
+color: red;
+font-weight: bold;
+padding: 3px;
+margin: 3px;
+}
+
+.btn_add {
+
+  background-image: linear-gradient(#2b9aac, #0d70ea);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #dddde7;
+  cursor: pointer;
+  font-size: .9em;
+  margin: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  text-shadow: -1px 0 rgb(37, 36, 36), 0 1px rgb(37, 36, 36), 1px 0 rgb(37, 36, 36), 0 -1px rgb(37, 36, 36);
+
+
+}
+
+
+
+
+  .btn_copy_URL {
+
+    background-image: linear-gradient(#2b9aac, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #dddde7;
+    cursor: pointer;
+    font-size: .9em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    text-shadow: -1px 0 rgb(37, 36, 36), 0 1px rgb(37, 36, 36), 1px 0 rgb(37, 36, 36), 0 -1px rgb(37, 36, 36);
+  
+    
+  
+  }
+
+
+
+  .btn_clear_items {
+
+    background-image: linear-gradient(#2b9aac, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #dddde7;
+    cursor: pointer;
+    font-size: .9em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    text-shadow: -1px 0 rgb(37, 36, 36), 0 1px rgb(37, 36, 36), 1px 0 rgb(37, 36, 36), 0 -1px rgb(37, 36, 36);
+  
+  
+  }
+
+
+
+.btn_add:hover {
+    background-image: linear-gradient(#2b9aac, #155cb3);
+}
+
+.btn_add:active {
+    box-shadow: rgba(0, 0, 0, .9) 0 7px 17px;
+    text-shadow: -2px 0 rgb(37, 36, 36), 0 2px rgb(37, 36, 36), 2px 0 rgb(37, 36, 36), 0 -2px rgb(37, 36, 36);
+}
+
+
+.btn_copy_URL:hover {
+    background-image: linear-gradient(#2b9aac, #155cb3);
+}
+
+.btn_copy_URL:active {
+    box-shadow: rgba(0, 0, 0, .9) 0 7px 17px;
+    text-shadow: -2px 0 rgb(37, 36, 36), 0 2px rgb(37, 36, 36), 2px 0 rgb(37, 36, 36), 0 -2px rgb(37, 36, 36);
+}
+
+.btn_clear_items:hover {
+    background-image: linear-gradient(#2b9aac, #155cb3);
+}
+
+.btn_clear_items:active {
+    box-shadow: rgba(0, 0, 0, .9) 0 7px 17px;
+    text-shadow: -2px 0 rgb(37, 36, 36), 0 2px rgb(37, 36, 36), 2px 0 rgb(37, 36, 36), 0 -2px rgb(37, 36, 36);
+}
+
+
+.int_add {
+    font-size: .9em;
+    padding: 10px 15px;
+}
+
+
+.remove_item {
+    float: right;
+    background: rgba(203, 209, 235, 0.3);
+    border-style: none;
+    font-weight: bolder;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #303233;
+}
+
+.remove_item:hover {
+
+    background: rgba(203, 209, 235, 0.6);
+
+}

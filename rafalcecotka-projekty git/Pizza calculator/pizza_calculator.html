@@ -21,10 +21,21 @@
 <div class = "box">
 
 	<div class="info_detail" id = "recipe_desc" style = "visibility:hidden;">
-		<p style="font-size:25px;">PRZEPIS - opisowy</p>
-		Składniki zaczynu wymieszać w pojemniku i szczelnie zamknąć, odstawić na 1-2h w temp. pokojowej. Odstawić do lodówki na 16-24h.
-		Zaczyn połączyć z resztą składników na ciasto, wyrabiać ok. 10 min. Odstawić na 15 min. Wyrobić kulkę wstawić do szczelnego pojemnika i wstawić do lodówki na 24-96h.
-		Ciasto podzielić na porcję i uformować kulki, trzymać w lodówce , wyjąć ok. 4 h przed pieczeniem
+
+		<div id = "prev" style = "float:left;height: 310px;width: 30px;background-color: rgba(0,0,0,0);text-align: left;" onclick="prev_step()"> 
+			<div style="top: 50%;position: relative;"> <img class="changer" src = "left_arr.png" > </div>
+		</div>
+
+		<div  id = "recipe_steps" style = "float:left;height: 310px;width: 320px;background-color: rgba(0,0,0,0);" >
+			<p>PRZEPIS 1 / 4</p>
+			Składniki zaczynu dokładnie ze sobą wymieszać i zostawić w temperaturze pokojowej na 1-2 h. Następnie wstawić zaczyn do lodówki na 16-24h.
+		</div>
+
+		<div id = "next" style = "float:left;height: 310px;width: 30px;background-color: rgba(0,0,0,0);text-align: right;" onclick="next_step()">
+			<div style="top: 50%;position: relative;"> <img class="changer" src = "right_arr.png" > </div>
+		</div>
+
+
 	</div>
 	
 	<div class="calculator">
@@ -32,15 +43,15 @@
 
 		<p style="text-align:center;font-size:25px;"> WPROWADŹ DANE</p>
 		<form>
-			<label class = "label"> Liczba porcji [szt] </label>
+			<label class = "label"> Liczba porcji [szt] </label> <span id = "portion_err" style = "font-size: 11px;color: red;background-color: rgb(141, 163, 163);border-radius: 10px;padding: 2px;opacity:0;"> </span>
 			<br>
 			<input id = "pizza_qty" type="number" placeholder="Liczba porcji np. 2" onfocus = "pizza_p_info_on()" onfocusout = "pizza_p_info_off()" min = "1">
 			<br>
-			<label class = "label"> Waga porcji [g] </label>
+			<label class = "label"> Waga porcji [g] </label> <span id = "weight_err" style = "font-size: 11px;color: red;background-color: rgb(141, 163, 163);border-radius: 10px;padding: 2px;opacity:0;"> </span>
 			<br>
 			<input id = "pizza_g" type="number" placeholder="Waga porcji np. 265g" onfocus = "pizza_g_info_on()" onfocusout = "pizza_g_info_off()" min = "1">
 			<br>
-			<label class = "label"> Poziom hydracji [%] </label>
+			<label class = "label"> Poziom hydracji [%] </label> <span id = "hydration_err" style = "font-size: 11px;color: red;background-color: rgb(141, 163, 163);border-radius: 10px;padding: 2px;opacity:0;"></span>
 			<br>
 			<input id = "hydration" type="number" placeholder="%Hydracja np. 65%" onfocus = "pizza_h_info_on()" onfocusout = "pizza_h_info_off()" min = "1" max = "100,000000">
 			<br>

@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+
+<head>
+<title>Shoping list</title>
+<meta charset="utf-8" />
+<meta name="description" content="Mini aplikacja do tworzenia i realizacji listy zakupów">
+<meta name="keywords" content="lista zakupów shoping list">
+</head>
+<link rel="stylesheet" href="style.css">
+<script src = "code.jquery.com_jquery-3.7.0.js"></script>
+<body>
+<!--  -->
+
+<div class="header">
+<b>SHOPING LIST</b>
+</div>
+<div class="handling_container"> 
+
+    <div class="center">
+        <div>
+            <button class = "btn_add"> <b>Dodaj element </b></button> <input class = "int_add" type="text" placeholder="Wpisz element ..."> 
+        </div>
+        <div class="center_error">
+            <span class="error_txt"> </span>
+        </div>
+    </div>
+
+    
+</div>
+<div class = "item_container">
+
+</div>
+
+<div class="handling_container">
+    <div class="center">
+        <button class = "btn_clear_items"> <b>Wyczyść listę</b></button>
+        <button class = "btn_copy_URL"> <b>Pobierz URL</b></button>
+    </div>
+    <div id = "url_to_copy_div">
+        <input id = "url_to_copy" type="text" style="visibility:hidden;">
+    </div>
+</div>
+
+<div class="footer">
+SHOPING LIST - Projekt JavaScript &copy RAFAŁ CECOTKA 
+</div>
+
+<script src = "code.jquery.com_jquery-3.7.0.js"></script>
+<script src = "main.js"></script>
+
+</body>
+
+</html>

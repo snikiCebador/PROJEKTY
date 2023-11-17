@@ -33,7 +33,7 @@ document.getElementById("option_area").style.zIndex = "-10";
 //window.alert(results_tab.length)
 document.getElementsByClassName("properties")[0].innerHTML = "Aby rozpocząć grę kliknji kropkę na środku ekranu";
 }
-return target_size, results_tab=[], shoots_qty
+return target_size, results_tab=[], shoots_qty, times_tab = []
 }
 
 
@@ -64,30 +64,41 @@ document.getElementsByClassName("properties")[0].innerHTML = "";
 
 
 } else if (liczba <= shoots_qty) {
-	document.getElementsByClassName("properties")[0].innerHTML = "Liczba trafień: " + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
-															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
-															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
+	times_tab.push(Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100)
+	document.getElementsByClassName("properties")[0].innerHTML = "Liczba trafień: " + '<span style="float:right;margin-right:200px;">'+ ((results_tab.length) - 1) + " / " + shoots_qty + "</span> <br> " 
+															+ 'Ostatni czas: <span style="float:right;margin-right:200px;">' + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec </span><br>"
+															+ 'Średni czas: <span style="float:right;margin-right:200px;">' + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec </span><br>"
+															+ 'Najszybszy czas: <span style="float:right;margin-right:200px;">' + Math.min.apply(Math, times_tab) + " sec </span><br>" // 1
+															+ 'Najwolniejszy czas: <span style="float:right;margin-right:200px;">' + Math.max.apply(Math, times_tab) + " sec</span>";
 															
 	if (liczba == shoots_qty) {
 		//document.getElementById("game_area").style.backgroundColor = "grey";
 		//document.getElementById("target").style.backgroundColor = "grey";
 		//document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+		times_tab.push(Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100)
 		document.getElementById("option_area").style.zIndex = "310";
 		document.getElementsByClassName("properties")[0].innerHTML = "";
-		document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> Liczba trafień: ' + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
-															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
-															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
+		document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> <span style = "text-align:left;float:left;"> Liczba trafień: </span>' + '<span style = "float:right;">' + ((results_tab.length) - 1) + " / " + shoots_qty + "</span> <br> " 
+															+ '<span style = "text-align:left;float:left;">Ostatni czas: </span>' + '<span style = "float:right;">'+ Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec</span> <br>"
+															+ '<span style = "text-align:left;float:left;">Średni czas: </span>' + '<span style = "float:right;">'+ Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec</span> <br>"
+															+ '<span style = "text-align:left;float:left;">Najszybszy czas: </span>' + '<span style = "float:right;">'+ Math.min.apply(Math, times_tab) + " sec</span> <br>"  // 1
+															+ '<span style = "text-align:left;float:left;">Najwolniejszy czas: </span>' + '<span style = "float:right;">'+ Math.max.apply(Math, times_tab) + " sec</span>"
+															+ '<div style="clear:both;"></div>';
 	}
 } else {
 
 //document.getElementById("game_area").style.backgroundColor = "grey";
 //document.getElementById("target").style.backgroundColor = "grey";
 //document.getElementById("game_area").innerHTML = '<br><br><br>GRA SKOŃCZONA <br> <a href="#"><button>POWTÓRZ</button></a>';
+times_tab.push(Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100)
 document.getElementById("option_area").style.zIndex = "310";
 document.getElementsByClassName("properties")[0].innerHTML = "";
-document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> Liczba trafień: ' + ((results_tab.length) - 1) + " / " + shoots_qty + " <br> " 
-															+ "Ostatni czas: " + Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec <br>"
-															+ "Średni czas: " + Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec";
+document.getElementById("results_last").innerHTML = '<br> <span style="letter-spacing: 2px;" >WYNIKI</span> <br><br> <span style = "text-align:left;float:left;"> Liczba trafień: </span>' + '<span style = "float:right;">' + ((results_tab.length) - 1) + " / " + shoots_qty + "</span> <br> " 
+															+ '<span style = "text-align:left;float:left;">Ostatni czas: </span>' + '<span style = "float:right;">'+ Math.round(((results_tab[results_tab.length - 1] - results_tab[results_tab.length - 2]) / 1000)*100)/100 + " sec</span> <br>"
+															+ '<span style = "text-align:left;float:left;">Średni czas: </span>' + '<span style = "float:right;">'+ Math.round(((((results_tab[results_tab.length - 1] - results_tab[0]) / ((results_tab.length) - 1)) / 1000 ))*100)/100  + " sec</span> <br>"
+															+ '<span style = "text-align:left;float:left;">Najszybszy czas: </span>' + '<span style = "float:right;">'+ Math.min.apply(Math, times_tab) + " sec</span> <br>"  // 1
+															+ '<span style = "text-align:left;float:left;">Najwolniejszy czas: </span>' + '<span style = "float:right;">'+ Math.max.apply(Math, times_tab) + " sec</span>"
+															+ '<div style="clear:both;"></div>';
 }
 }
 
@@ -125,12 +136,13 @@ float:left;
 
 .properties {
 background-color:#1a8cff;
-width:410px;
+width:400px;
 height:100px;
 border-radius:4px;
 font-size: 16px;
 line-height:20px;
-text-align:center;
+text-align:left;
+padding-left: 10px;
 font-family: Fantasy, Papyrus;
 float:left;
 }
@@ -227,21 +239,38 @@ right: -490px;
 		<div id = "option_area">
 			<div id = "results"> 
 				<div style = "justify-content: center;margin-bottom: 6px;letter-spacing: 2px;"> OPCJE ROZGRYWKI</div>
-				<div style = "justify-content: center;margin-bottom: 3px;">
-					<label for="target_size">Wielkość celu:</label>
-					<select name = "target_size" id = "target_size" style="font-size: 30px;">
-						<option value="20"> Mała </option>
-						<option value="30"> Średnia </option>
-						<option value="40"> Duża </option>
-					</select>
+				<div style = "margin-bottom: 3px;">
+					<div style="float:left;">
+						<label for="target_size" style="font-size: 30px;justify-self: left;">Wielkość celu:</label>
+					</div>
+					<div style="float:right;">
+						<select name = "target_size" id = "target_size" style="font-size: 30px;width: 150px;">
+							<option value="20"> Mała </option>
+							<option value="30"> Średnia </option>
+							<option value="40"> Duża </option>
+						</select>
+					</div>
+
 				</div>
-				
-				<div>
-					<label for="shoots">Liczba prób:</label>
-		
-					<input type="number" id="shoots" name="shoots" min="0" max="100" style="font-size: 30px;">
-					<br>
-					<button onclick = "define_properties()" style = "padding:5px;font-size: 30px;font-family: Fantasy, Papyrus;width: 150px;letter-spacing: 2px;"> Ustaw </button>
+
+				<div style = "clear:both;"></div>
+
+				<div >
+
+					<div style="float:left;">
+						<label for="shoots">Liczba prób:</label>
+					</div>
+					
+					<div style="float:right;">
+						<input type="number" id="shoots" name="shoots" min="0" max="100" style="font-size: 30px;width: 142px;">
+					</div>
+
+				<div style = "clear:both;"></div>
+					
+					<div >
+						<button onclick = "define_properties()" style = "padding:5px;font-size: 30px;font-family: Fantasy, Papyrus;width: 150px;letter-spacing: 2px;"> Ustaw </button>
+					</div>
+					
 				</div>
 
 				<div id = "bad_parameters" style="color:red;font-size: 10px;"></div>
