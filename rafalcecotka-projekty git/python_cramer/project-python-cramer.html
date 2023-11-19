@@ -99,6 +99,10 @@ display: block;
   background-color: #ccc;
 }
 
+#init {
+  background-color: #ccc;
+}
+
 /* Style the tab content */
 .tabcontent {
   display: none;
@@ -141,6 +145,11 @@ display: block;
   // Declare all variables
   var i, tabcontent, tablinks;
 
+  // if init exist change it to dummy id
+  if (document.getElementById("init")) {
+    document.getElementById("init").id = "placeholder";
+  }
+  
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -169,7 +178,7 @@ display: block;
 
 	<div class = "project-text">
 		<div class="tab">
-			<button class="tablinks" onclick="opentab(event, 'Opis techniczny')">Opis techniczny</button>
+			<button class="tablinks" id="init" onclick="opentab(event, 'Opis techniczny')">Opis techniczny</button>
 			<button class="tablinks" onclick="opentab(event, 'Opis funkcjonalny')">Opis funkcjonalny</button>
 		  </div>
 		  
