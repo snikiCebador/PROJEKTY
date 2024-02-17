@@ -2,8 +2,8 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
-	<title>eCV - Projekty - Cramer</title>
-	<meta name="description" content="Strona mająca na obliczanie metodą Cramera" />
+	<title>eCV - Projekty - Klasyfikacja chmieli</title>
+	<meta name="description" content="Strona mająca na celu zaprezentowanie projektów" />
 	<meta name="keywords" content="cecotka, rafal, cv, html" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 </head>
@@ -69,6 +69,9 @@ z-index: 0;
 
 .img_catalog {
 display: block;
+margin-left:auto;
+margin-right:auto;
+border-radius: 5px;
 }
 
 .tab {
@@ -173,7 +176,7 @@ display: block;
 <body>
 
 	<div class = "project-header">
-		<b style = "line-height:100px;font-size:40px;"> Python - obliczanie układów równań metodą Cramera </b> 
+		<b style = "line-height:100px;font-size:40px;"> ML - klasyfikacja chmieli </b> 
 	</div>
 
 	<div class = "project-text">
@@ -186,8 +189,17 @@ display: block;
 		  <div id="Opis techniczny" class="tabcontent" style="display:block">
 			<b>Opis techniczny</b>
       <br>
+      
       <div style="overflow:scroll; height:500px;">
-      <img src="kod.png">
+      <img style="border-radius: 5px;" src="kod1.PNG">
+      <img style="border-radius: 5px;" src="kod2.PNG">
+      <img style="border-radius: 5px;" src="kod3.PNG">
+      <img style="border-radius: 5px;" src="kod4.PNG">
+      <img style="border-radius: 5px;" src="kod5.PNG">
+      <img style="border-radius: 5px;" src="kod6.PNG">
+      <img style="border-radius: 5px;" src="kod7.PNG">
+      <img style="border-radius: 5px;" src="kod8.PNG">
+      <img style="border-radius: 5px;" src="kod9.PNG">
       </div>
 		  </div>
 		  
@@ -198,16 +210,21 @@ display: block;
       </div>
 			<b>Opis funkcjonalny</b>
       <br>
-      Program pozwala użytkownikowi wprowadzić dane opisujące układ równań. Następnie program policzy niewiadome równania z wykorzystaniem metody Cramera (o ile jest to możliwe). Poniżej przykład 
-      wykorzystania programu:
+      Celem projektu jest wykorzystanie danych pozyskanych z <a href="https://rafalcecotka.pl/webscraping-twoj-browar/webscraping-twoj-browar.html" target="_blank"> <em> procesu webscrapingu </em> </a>
+      do stworzenia przykładowej klasyfikacji chmieli.
       <br>
-      <img class="img_catalog" src="przyklad.PNG">      
+      Rozwiązanie przygotowuje dane do użycia w modelu ML - zamieniając tekst w danym schemacie na liczby wg ustalonych zasad np. tekst 2-4% zamieni na liczbę 3 (wg zdefiniowanych funkcji). W ramach przygotowania danych 
+      następuje też czyszczenie danych tj. usunięcie danych nieprawidłowych i duplikatów.
+      <br>
+      Przygotowane dane są używane w modelu KMeans z użyciem wykresu łokciowego ustalamy liczbę klastrów na 4 i w efekcie uzyskujemy podział na 4 grupy wg cech liczba aromatów oraz zawartość olejków aromatycznych:
+      <img style="border-radius: 5px;margin-left: auto;margin-right: auto;text-align: center;display: block;" src="kod8.PNG">
+      
 		  </div>
 
 	</div>
 
 	<div class = "project-footer" > 
-		<i>Projekt Python &copy Rafał Cecotka </i>
+		<i>Projekt ML, Python &copy Rafał Cecotka </i>
 	</div>
 
 
